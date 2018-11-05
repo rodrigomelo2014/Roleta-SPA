@@ -1,0 +1,93 @@
+<div id="titulo">Simulador Roleta Cassino</div>
+<br>
+<table>
+  <tr>
+    <td id="zero" (click)="addApostas('0')">0</td>
+  </tr>
+  </table>
+<table>
+  <tr>
+      <td class="vermelho" id="tres" (click)="addApostas('3')"><br>3</td>
+      <td class="preto" id="seis" (click)="addApostas('6')"><br>6</td>
+      <td class="vermelho" id="nove" (click)="addApostas('9')"><br>9</td>
+      <td class="vermelho" id="doze" (click)="addApostas('12')"><br>12</td>
+      <td class="preto" id="quinze" (click)="addApostas('15')"><br>15</td>
+      <td class="vermelho" id="dezoito" (click)="addApostas('18')"><br>18</td>
+      <td class="vermelho" id="vinteum" (click)="addApostas('21')"><br>21</td>
+      <td class="preto" id="vintequatro" (click)="addApostas('24')"><br>24</td>
+      <td class="vermelho" id="vintesete" (click)="addApostas('27')"><br>27</td>
+      <td class="vermelho" id="trinta" (click)="addApostas('30')"><br>30</td>
+      <td class="preto" id="trintatres" (click)="addApostas('33')"><br>33</td>
+      <td class="vermelho" id="trintaseis" (click)="addApostas('36')"><br>36</td>
+      <td class="coluna" id="primeiracoluna" (click)="addApostas('coluna1')">2 to 1</td>
+  </tr>
+
+  <tr>
+      <td class="preto" id="dois" (click)="addApostas('2')"><br>2</td>
+      <td class="vermelho" id="cinco" (click)="addApostas('5')"><br>5</td>
+      <td class="preto" id="oito" (click)="addApostas('8')"><br>8</td>
+      <td class="preto" id="onze" (click)="addApostas('11')"><br>11</td>
+      <td class="vermelho" id="catorze" (click)="addApostas('14')"><br>14</td>
+      <td class="preto" id="dezessete" (click)="addApostas('17')"><br>17</td>
+      <td class="preto" id="vinte" (click)="addApostas('20')"><br>20</td>
+      <td class="vermelho" id="vintetres" (click)="addApostas('23')"><br>23</td>
+      <td class="preto" id="vinteseis" (click)="addApostas('26')"><br>26</td>
+      <td class="preto" id="vintenove" (click)="addApostas('29')"><br>29</td>
+      <td class="vermelho" id="trintadois" (click)="addApostas('32')"><br>32</td>
+      <td class="preto" id="trintacinco" (click)="addApostas('35')"><br>35</td>
+      <td class="coluna" id="segundacoluna" (click)="addApostas('coluna2')">2 to 1</td>
+  </tr>
+      
+  <tr>
+      <td class="vermelho" id="um" (click)="addApostas('1')"><br>1</td>
+      <td class="preto" id="quatro" (click)="addApostas('4')"><br>4</td>
+      <td class="vermelho" id="sete" (click)="addApostas('7')"><br>7</td>
+      <td class="preto" id="dez" (click)="addApostas('10')"><br>10</td>
+      <td class="preto" id="treze" (click)="addApostas('13')"><br>13</td>
+      <td class="vermelho" id="dezesseis" (click)="addApostas('16')"><br>16</td>
+      <td class="vermelho" id="dezenove" (click)="addApostas('19')"><br>19</td>
+      <td class="preto" id="vintedois" (click)="addApostas('22')"><br>22</td>
+      <td class="vermelho" id="vintecinco" (click)="addApostas('25')"><br>25</td>
+      <td class="preto" id="vinteoito" (click)="addApostas('28')"><br>28</td>
+      <td class="preto" id="trintaum" (click)="addApostas('31')"><br>31</td>
+      <td class="vermelho" id="trintaquatro" (click)="addApostas('34')"><br>34</td>
+      <td class="coluna" id="terceiracoluna" (click)="addApostas('coluna3')">2 to 1</td>
+    </tr>
+  </table>
+  <br>
+  <table class="inferior">
+    <tr>
+      <td class="duzia" id="primeiraduzia" (click)="addApostas('duzia1')">1st 12</td>
+      <td class="duzia" id="segundaduzia" (click)="addApostas('duzia2')">2nd 12</td>
+      <td class="duzia" id="terceiraduzia" (click)="addApostas('duzia3')">3rd 12</td>    
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+<table class="inferior">
+  <tr>
+    <td class="especial" id="primeirametade" (click)="addApostas('metade1')">1 to 18</td>
+    <td class="especial"id="par" (click)="addApostas('par')">EVEN</td>
+    <td class="especial"id="vermelho" (click)="addApostas('vermelho')">RED</td>
+    <td class="especial"id="preto" (click)="addApostas('preto')">BLACK</td>
+    <td class="especial"id="impar" (click)="addApostas('impar')">ODD</td>
+    <td class="especial"id="segundametade" (click)="addApostas('metade2')">19 to 36</td>
+  </tr>
+</table>
+<div>
+  <img [ngClass]="{'roleta': this.girar == true}" id="roleta" src="assets/img/roleta.png"/>
+</div>
+<button (click)="runRoulette()">GIRAR</button>
+<div id="resposta">{{result}}</div>
+
+<div class="lista">
+  <li *ngFor="let aposta of apostas">
+    Aposta: {{ aposta.tipoAposta }} 
+    <label>Valor R$:
+        <input type="number" [(ngModel)]="aposta.valor">
+    </label>
+  </li>
+</div>
+
+<div id="premio">PREMIO: R${{premio}},00</div>

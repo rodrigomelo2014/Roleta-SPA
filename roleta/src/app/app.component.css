@@ -1,0 +1,172 @@
+#zero{
+    background-color:darkgreen;
+    color:white;
+    height:155px;
+    line-height:155px;
+    width:50px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.vermelho{
+    background-color:red;
+    color:white;
+    display: inline-block;
+    height:50px;
+    width:50px;
+    text-align: center;
+}
+
+.preto{
+    background-color:black;
+    color:white;
+    display: inline-block;
+    height:50px;
+    width:50px;
+    text-align: center;
+}
+
+table {
+    display:inline-block;
+}
+
+.coluna{
+    background-color: darkgreen;
+    color:white;
+    text-align: center;
+    height:50px;
+    width:50px;
+}
+
+.duzia{
+    background-color: darkgreen;
+    color:white;
+    text-align: center;
+    height:50px;
+    width:205px;
+}
+
+.especial{
+    background-color: darkgreen;
+    color:white;
+    text-align: center;
+    height:50px;
+    width: 100px;
+}
+
+#roleta{
+    display:inline-block;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 70%;
+    top: 5%;
+}
+.roleta{
+    display:inline-block;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    left: 70%;
+    top: 5%;
+    -webkit-animation:spin 5s ease-in-out;
+    -moz-animation:spin 5s ease-in-out;
+    animation:spin 5s ease-in-out;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(1800deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(1800deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(1800deg); transform:rotate(1800deg); } }
+
+
+.inferior{
+    position:absolute;
+    left:62px;
+}
+
+#titulo{
+    font-size:36px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    color:white;
+}
+
+td:hover{
+    cursor:pointer;
+}
+
+button{
+    position:absolute;
+    top:50%;
+    left:72%;
+    height: 50px;
+    background-color: darkgreen;
+    color:white;
+    width:100px;
+}
+
+#resposta{
+    position:absolute;
+    height: 30px;
+    width: 72px;
+    top:50%;
+    left:80%;
+    border-style: solid;
+    padding:10px;
+    background-color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.lista{
+    display:block;
+    position:absolute;
+    top:50%;
+    margin-top:5px;
+    background-color:white;
+}
+
+input{
+    padding:5px;
+}
+label{
+    position:relative;
+    left:10%;
+}
+
+.hidden{
+    display:none;
+}
+.show{
+    display:block;
+}
+
+#modal-container {
+    position:  fixed;
+    top: 300px;
+    left: 50%;
+    width: 375px;
+    background: white;
+    margin-left: -187.5px;
+    text-align: center;
+    box-shadow: 0px 0px 2px 1px black;
+    z-index: 100;
+}
+
+#overlay {
+    position: absolute;
+    top: 0px;
+    left:  0px;
+    z-index:  99;
+    background:  rgba(0,0,0,0.8);
+    width:  100%;
+    height: 100%;
+}
+
+#premio{
+    color:white;
+    font-size:30px;
+    position:absolute;
+    top:60%;
+    left:72%;
+}
